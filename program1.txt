@@ -1,0 +1,4 @@
+float comb()
+{	float m, n, p;
+m = n + m - p;
+}

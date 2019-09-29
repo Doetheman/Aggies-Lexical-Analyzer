@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Doetheman/Documents/ProgrammingLanguages/Lexical-Analyzer-in-Cpp/lexicalanalyzer.cpp
+bits/stdc++.h
+-
+stdlib.h
+-
+string.h
+-
+ctype.h
+-
+
