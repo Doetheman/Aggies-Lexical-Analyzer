@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Lexical-Analyzer-in-Cpp.dir/lexicalanalyzer.cpp.obj"
+  "CMakeFiles/Lexical-Analyzer-in-Cpp.dir/lexicalanalyzer.cpp.o"
   "Lexical-Analyzer-in-Cpp.pdb"
-  "Lexical-Analyzer-in-Cpp.exe"
-  "Lexical-Analyzer-in-Cpp.exe.manifest"
-  "libLexical-Analyzer-in-Cpp.dll.a"
+  "Lexical-Analyzer-in-Cpp"
 )
 
 # Per-language clean rules from dependency scanning.

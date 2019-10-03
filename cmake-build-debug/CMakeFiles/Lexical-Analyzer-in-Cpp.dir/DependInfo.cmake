@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Doetheman/Documents/ProgrammingLanguages/Lexical-Analyzer-in-Cpp/lexicalanalyzer.cpp" "C:/Users/Doetheman/Documents/ProgrammingLanguages/Lexical-Analyzer-in-Cpp/cmake-build-debug/CMakeFiles/Lexical-Analyzer-in-Cpp.dir/lexicalanalyzer.cpp.obj"
+  "/Users/Oluchi/Downloads/Aggies-Lexical-Analyzer/lexicalanalyzer.cpp" "/Users/Oluchi/Downloads/Aggies-Lexical-Analyzer/cmake-build-debug/CMakeFiles/Lexical-Analyzer-in-Cpp.dir/lexicalanalyzer.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

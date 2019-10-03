@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include</Users/Oluchi/Downloads/Aggies-Lexical-Analyzer/stdc++.h>
 #include<stdlib.h>
 #include<string.h>
 #include<ctype.h>
@@ -24,9 +24,34 @@ int isKeyword(char buffer[]){
     return flag;
 }
 
+
+void MathOperators(int mc , vector<char>ma){
+    printf("Math Operators: ");
+    for(int f=0;f<mc;++f){
+        if(f==mc-1){
+            cout<<ma[f]<<"\n";
+        }
+        else {
+            cout<<ma[f]<<", ";
+        }
+    }
+}
+
+void LogicalOperators(int lc, vector<char> lo ){
+    printf("Logical Operators: ");
+    for(int f=0;f<lc;++f){
+        if(f==lc-1){
+            cout<<lo[f]<<"\n";
+        }
+        else {
+            cout<<lo[f]<<", ";
+        }
+    }
+}
+
 int main(){
     char ch, buffer[15],b[30], logical_op[] = "><",math_op[]="+-*/=",numer[]=".0123456789",other[]=",;\(){}[]'':";
-    ifstream fin(R"(C:\Users\Doetheman\Documents\ProgrammingLanguages\Lexical-Analyzer-in-Cpp\program1.txt)");
+    ifstream fin(R"(/Users/Oluchi/Downloads/Aggies-Lexical-Analyzer/program1.txt)");
     int mark[1000]={0};
     int i,j=0,kc=0,ic=0,lc=0,mc=0,nc=0,oc=0,aaa=0;
     vector < string > k;
@@ -119,6 +144,8 @@ int main(){
            }
 
     }
+    MathOperators(mc, ma);
+    LogicalOperators(lc, lo );
 
     fin.close();
     printf("Keywords: ");
@@ -139,15 +166,9 @@ int main(){
                 cout<<id[f]<<", ";
             }
     }
-    printf("Math Operators: ");
-    for(int f=0;f<mc;++f){
-            if(f==mc-1){
-                cout<<ma[f]<<"\n";
-            }
-            else {
-                cout<<ma[f]<<", ";
-            }
-    }
+
+
+
     printf("Logical Operators: ");
     for(int f=0;f<lc;++f){
             if(f==lc-1){
