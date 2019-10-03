@@ -34,6 +34,19 @@ void keyword(int kc, vector<string> k) {
     }
 }
 
+void identifiers(int ic, vector<char> id){
+    printf("Identifiers: ");
+    for(int f=0;f<ic;++f){
+        if(f==ic-1){
+                cout<<id[f]<<"\n";
+            }
+            else {
+                cout<<id[f]<<", ";
+            }
+    }
+}
+
+
 int main() {
     char ch, buffer[15], b[30], logical_op[] = "><", math_op[] = "+-*/=", numer[] = ".0123456789", other[] = ",;\(){}[]'':";
     ifstream fin(R"(C:\Users\Doetheman\Documents\ProgrammingLanguages\Lexical-Analyzer-in-Cpp\program1.txt)");
@@ -132,18 +145,12 @@ int main() {
 
     fin.close();
     keyword( kc,  k);
+    identifiers(ic, id);
     return 0;
 }
 
 //    printf("Identifiers: ");
-//     for(int f=0;f<ic;++f){
-//        if(f==ic-1){
-//                cout<<id[f]<<"\n";
-//            }
-//            else {
-//                cout<<id[f]<<", ";
-//            }
-//    }
+//
 //    printf("Math Operators: ");
 //    for(int f=0;f<mc;++f){
 //            if(f==mc-1){

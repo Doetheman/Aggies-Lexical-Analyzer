@@ -1,4 +1,5 @@
-float comb()
-{	float m, n, p;
-m = n + m - p;
+
+float addsub()
+{	float x, z;
+x - z;
 }
