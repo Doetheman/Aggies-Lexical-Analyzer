@@ -23,51 +23,52 @@ int isKeyword(char buffer[]){
 
     return flag;
 }
-void keyword(int kc, vector<string> k) {
+void keyword(int keywordCount, vector<string> keywordList) {
     printf("Keywords: ");
-    for (int f = 0; f < kc; ++f) {
-        if (f == kc - 1) {
-            cout << k[f] << "\n";
+    for (int f = 0; f < keywordCount; ++f) {
+        if (f == keywordCount - 1) {
+            cout << keywordList[f] << "\n";
         } else {
-            cout << k[f] << ", ";
+            cout << keywordList[f] << ", ";
         }
     }
 }
 
 
-void MathOperators(int mc , vector<char>ma){
+void MathOperators(int mathOperatorsCount , vector<char>mathOperatorsList){
     printf("Math Operators: ");
-    for(int f=0;f<mc;++f){
-        if(f==mc-1){
-            cout<<ma[f]<<"\n";
+    for(int f=0; f < mathOperatorsCount; ++f){
+        if(f == mathOperatorsCount - 1){
+            cout << mathOperatorsList[f] << "\n";
         }
         else {
-            cout<<ma[f]<<", ";
+            cout << mathOperatorsList[f] << ", ";
         }
     }
 }
 
-void LogicalOperators(int lc, vector<char> lo ){
+void LogicalOperators(int logicalOperatorsCount, vector<char> logicalOperatorsList ){
     printf("Logical Operators: ");
-    for(int f=0;f<lc;++f){
-        if(f==lc-1){
-            cout<<lo[f]<<"\n";
+    for(int f=0; f < logicalOperatorsCount; ++f){
+        if(f == logicalOperatorsCount - 1){
+            cout << logicalOperatorsList[f] << "\n";
         }
         else {
-            cout<<lo[f]<<", ";
+            cout << logicalOperatorsList[f] << ", ";
         }
     }
 
 }
 
-void identifiers(int ic, vector<char> id){
+void identifiers(int idCount, vector<char> idList){
+    cout<< "\n";
     printf("Identifiers: ");
-    for(int f=0;f<ic;++f){
-        if(f==ic-1){
-            cout<<id[f]<<"\n";
+    for(int f=0; f < idCount; ++f){
+        if(f == idCount - 1){
+            cout << idList[f] << "\n";
         }
         else {
-            cout<<id[f]<<", ";
+            cout << idList[f] << ", ";
         }
     }
 }
@@ -76,18 +77,18 @@ int main() {
     char ch, buffer[15], b[30], logical_op[] = "><", math_op[] = "+-*/=", numer[] = ".0123456789", other[] = ",;\(){}[]'':";
     ifstream fin(R"(C:\Users\Doetheman\Documents\ProgrammingLanguages\Lexical-Analyzer-in-Cpp\program1.txt)");
     int mark[1000] = {0};
-    int i, j = 0, kc = 0, ic = 0, lc = 0, mc = 0, nc = 0, oc = 0, aaa = 0;
-    vector<string> k;
-    vector<char> id;
-    vector<char> lo;
-    vector<char> ma;
+    int i, j = 0, keywordCount = 0, idCount = 0, logicalOperatorsCount = 0, mathOperatorsCount = 0, nc = 0, otherCount = 0, aaa = 0;
+    vector<string> keywordList;
+    vector<char> idList;
+    vector<char> logicalOperatorsList;
+    vector<char> mathOperatorsList;
     vector<string> nu;
     vector<char> ot;
     if (!fin.is_open()) {
         cout << "error while opening the file\n";
         exit(0);
     }
-
+    // Condition statement that loops until you are at the end of the file.
     while (!fin.eof()) {
         ch = fin.get();
         for (i = 0; i < 12; ++i) {
@@ -96,7 +97,7 @@ int main() {
                 if (mark[aa] != 1) {
                     ot.push_back(ch);
                     mark[aa] = 1;
-                    ++oc;
+                    ++otherCount;
                 }
             }
         }
@@ -105,9 +106,9 @@ int main() {
             if (ch == math_op[i]) {
                 int aa = ch;
                 if (mark[aa] != 1) {
-                    ma.push_back(ch);
+                    mathOperatorsList.push_back(ch);
                     mark[aa] = 1;
-                    ++mc;
+                    ++mathOperatorsCount;
                 }
             }
         }
@@ -115,9 +116,9 @@ int main() {
             if (ch == logical_op[i]) {
                 int aa = ch;
                 if (mark[aa] != 1) {
-                    lo.push_back(ch);
+                    logicalOperatorsList.push_back(ch);
                     mark[aa] = 1;
-                    ++lc;
+                    ++logicalOperatorsCount;
                 }
             }
 
@@ -139,7 +140,6 @@ int main() {
             }
         }
 
-
         if (isalnum(ch)) {
             buffer[j++] = ch;
         } else if ((ch == ' ' || ch == '\n') && (j != 0)) {
@@ -148,15 +148,15 @@ int main() {
 
             if (isKeyword(buffer) == 1) {
 
-                k.push_back(buffer);
-                ++kc;
+                keywordList.push_back(buffer);
+                ++keywordCount;
             } else {
 
 
                 if (buffer[0] >= 97 && buffer[0] <= 122) {
                     if (mark[buffer[0] - 'a'] != 1) {
-                        id.push_back(buffer[0]);
-                        ++ic;
+                        idList.push_back(buffer[0]);
+                        ++idCount;
                         mark[buffer[0] - 'a'] = 1;
                     }
                    }
@@ -166,9 +166,9 @@ int main() {
     }
 
     fin.close();
-    keyword( kc,  k);
-    MathOperators(mc, ma);
-    LogicalOperators(lc, lo );
-    identifiers(ic, id);
+    keyword(keywordCount, keywordList);
+    MathOperators(mathOperatorsCount, mathOperatorsList);
+    LogicalOperators(logicalOperatorsCount, logicalOperatorsList );
+    identifiers(idCount, idList);
     return 0;
 }
