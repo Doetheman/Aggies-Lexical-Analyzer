@@ -34,18 +34,43 @@ void keyword(int kc, vector<string> k) {
     }
 }
 
+
+void MathOperators(int mc , vector<char>ma){
+    printf("Math Operators: ");
+    for(int f=0;f<mc;++f){
+        if(f==mc-1){
+            cout<<ma[f]<<"\n";
+        }
+        else {
+            cout<<ma[f]<<", ";
+        }
+    }
+}
+
+void LogicalOperators(int lc, vector<char> lo ){
+    printf("Logical Operators: ");
+    for(int f=0;f<lc;++f){
+        if(f==lc-1){
+            cout<<lo[f]<<"\n";
+        }
+        else {
+            cout<<lo[f]<<", ";
+        }
+    }
+
+}
+
 void identifiers(int ic, vector<char> id){
     printf("Identifiers: ");
     for(int f=0;f<ic;++f){
         if(f==ic-1){
-                cout<<id[f]<<"\n";
-            }
-            else {
-                cout<<id[f]<<", ";
-            }
+            cout<<id[f]<<"\n";
+        }
+        else {
+            cout<<id[f]<<", ";
+        }
     }
 }
-
 
 int main() {
     char ch, buffer[15], b[30], logical_op[] = "><", math_op[] = "+-*/=", numer[] = ".0123456789", other[] = ",;\(){}[]'':";
@@ -134,17 +159,16 @@ int main() {
                         ++ic;
                         mark[buffer[0] - 'a'] = 1;
                     }
-
-                }
-
-            }
-
+                   }
+           }
         }
 
     }
 
     fin.close();
     keyword( kc,  k);
+    MathOperators(mc, ma);
+    LogicalOperators(lc, lo );
     identifiers(ic, id);
     return 0;
 }

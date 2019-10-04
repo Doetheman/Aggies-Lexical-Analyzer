@@ -83,6 +83,9 @@
 		<Unit filename="C:/Users/Doetheman/Documents/ProgrammingLanguages/Lexical-Analyzer-in-Cpp/lexicalanalyzer.cpp">
 			<Option target="Lexical-Analyzer-in-Cpp"/>
 		</Unit>
+		<Unit filename="C:/Users/Doetheman/Documents/ProgrammingLanguages/Lexical-Analyzer-in-Cpp/stdc++.h">
+			<Option target="Lexical-Analyzer-in-Cpp"/>
+		</Unit>
 		<Unit filename="C:/Users/Doetheman/Documents/ProgrammingLanguages/Lexical-Analyzer-in-Cpp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
