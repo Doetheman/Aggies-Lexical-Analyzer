@@ -25,50 +25,71 @@ int isKeyword(char buffer[]){
 }
 void keyword(int keywordCount, vector<string> keywordList) {
     printf("Keywords: ");
-    for (int f = 0; f < keywordCount; ++f) {
-        if (f == keywordCount - 1) {
-            cout << keywordList[f] << "\n";
-        } else {
-            cout << keywordList[f] << ", ";
+    if (!keywordList.size()) {
+        cout << "\n";
+    } else {
+        for (int f = 0; f < keywordCount; ++f) {
+            if (f == keywordCount - 1) {
+                cout << keywordList[f] << "\n";
+            } else {
+                cout << keywordList[f] << ", ";
+            }
         }
     }
 }
 
-
-void MathOperators(int mathOperatorsCount , vector<char>mathOperatorsList){
+void MathOperators(int mathOperatorsCount , vector<char>mathOperatorsList) {
     printf("Math Operators: ");
-    for(int f=0; f < mathOperatorsCount; ++f){
-        if(f == mathOperatorsCount - 1){
-            cout << mathOperatorsList[f] << "\n";
-        }
-        else {
-            cout << mathOperatorsList[f] << ", ";
+    if (!mathOperatorsList.size()) {
+        cout << "\n";
+    } else {
+        for (int f = 0; f < mathOperatorsCount; ++f) {
+            if (f == mathOperatorsCount - 1) {
+                cout << mathOperatorsList[f] << "\n";
+            } else {
+                cout << mathOperatorsList[f] << ", ";
+            }
         }
     }
 }
 
-void LogicalOperators(int logicalOperatorsCount, vector<char> logicalOperatorsList ){
+void LogicalOperators(int logicalOperatorsCount, vector<char> logicalOperatorsList ) {
     printf("Logical Operators: ");
-    for(int f=0; f < logicalOperatorsCount; ++f){
-        if(f == logicalOperatorsCount - 1){
-            cout << logicalOperatorsList[f] << "\n";
-        }
-        else {
-            cout << logicalOperatorsList[f] << ", ";
+    if (!logicalOperatorsList.size()) {
+        cout << "\n";
+    } else {
+        for (int f = 0; f < logicalOperatorsCount; ++f) {
+            if (f == logicalOperatorsCount - 1) {
+                cout << logicalOperatorsList[f] << "\n";
+            } else {
+                cout << logicalOperatorsList[f] << ", ";
+            }
         }
     }
-
 }
 
 void identifiers(int idCount, vector<char> idList){
-    cout<< "\n";
     printf("Identifiers: ");
-    for(int f=0; f < idCount; ++f){
-        if(f == idCount - 1){
-            cout << idList[f] << "\n";
+    if(!idList.size()) {
+        cout << "/n";
+    } else {
+        for (int f = 0; f < idCount; ++f) {
+            if (f == idCount - 1) {
+                cout << idList[f] << "\n";
+            } else {
+                cout << idList[f] << ", ";
+            }
         }
-        else {
-            cout << idList[f] << ", ";
+    }
+}
+
+void others(int othersCount, vector<char> othersList) {
+    printf("Others: ");
+    for (int f = 0; f < othersCount; ++f) {
+        if (f == othersCount - 1) {
+            cout << othersList[f] << "\n";
+        } else {
+            cout << othersList[f] << " ";
         }
     }
 }
@@ -83,7 +104,7 @@ int main() {
     vector<char> logicalOperatorsList;
     vector<char> mathOperatorsList;
     vector<string> nu;
-    vector<char> ot;
+    vector<char> otherList;
     if (!fin.is_open()) {
         cout << "error while opening the file\n";
         exit(0);
@@ -95,7 +116,7 @@ int main() {
             if (ch == other[i]) {
                 int aa = ch;
                 if (mark[aa] != 1) {
-                    ot.push_back(ch);
+                    otherList.push_back(ch);
                     mark[aa] = 1;
                     ++otherCount;
                 }
@@ -170,5 +191,6 @@ int main() {
     MathOperators(mathOperatorsCount, mathOperatorsList);
     LogicalOperators(logicalOperatorsCount, logicalOperatorsList );
     identifiers(idCount, idList);
+    others(otherCount, otherList);
     return 0;
 }
