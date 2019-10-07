@@ -167,8 +167,6 @@ int main() {
             } else {
                 if (buffer[0] >= 97 && buffer[0] <= 122) {
                     if (mark[buffer[0] - 'a'] != 1) {
-                        char x = fin.get();
-                        cout << x;
                         idList.push_back(buffer[0]);
                         ++idCount;
                         mark[buffer[0] - 'a'] = 1;
